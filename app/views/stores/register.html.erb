@@ -1,0 +1,67 @@
+<!-- 
+  lIXIA ZHAO
+  CSC 620 hw5
+  reister.html.erb
+  Due 11/23/2015
+-->
+<h1>New User Register</h1>
+
+<%= form_for :user do |form| %>
+
+  <fieldset>
+
+    <legend>Your Registration Information</legend>
+
+    <label id="username" for="username">Username:</label>
+
+    <%= form.text_field :username %>
+    
+    <br /><br/>
+
+
+    <label id="password" for="password">Password:</label>
+
+    <%= form.password_field :password %>
+  
+    <br /> <br />
+
+
+    <label id = "squestion1" for="squestion1">Security Question1:</label>
+
+    <%= form.select :squestion1, options_for_select(@squestionlib.at(0)), {include_blank: "Select Question1"} %>
+   
+    <br /><br/>
+
+   <label id="sanswer1" for="sanswer1">Security Answer1:</label>
+
+    <%= form.text_field :sanswer1 %>
+    
+
+    <br /><br/>
+
+    <label id="squestion2" for="squestion2">Security Question2:</label>
+    <%= form.select :squestion2, options_for_select(@squestionlib.at(1)), {include_blank: "Select Question2"} %>
+    
+    <br /><br/>
+
+   <label id="sanswer2" for="sanswer2">Security Answer2:</label>
+    <%= form.text_field :sanswer2 %>
+   
+    <br /><br/>
+
+    <label id="squestion3" for="squestion3">Security Question3:</label>
+     <%= form.select :squestion3, options_for_select(@squestionlib.at(2)), {include_blank: "Please select"} %>
+    
+    <br /><br/>
+
+   <label id="sanswer3" for="sanswer3">Security Answer3:</label>
+    <%= form.text_field :sanswer3 %>
+    
+    <br /><br/>
+
+    <%= submit_tag "Register!", :class => "submit" %>
+
+  </fieldset>
+
+<% end %>
+

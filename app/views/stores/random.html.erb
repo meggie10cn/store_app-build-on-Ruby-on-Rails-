@@ -1,0 +1,17 @@
+<!-- 
+	lIXIA ZHAO
+	CSC 620 hw5
+	random.html.erb
+	Due 11/23/2015
+-->
+
+<h1>Identify Image</h1>
+<%= image_tag ($random_image) %>
+<%= form_for :randomQ do |form| %>
+<fieldset>
+<label id="random" for="random">Answer:</label>
+<%= form.text_field :ranswer %> </br>
+ <%= submit_tag "Verify", :class => "submit" %>
+</fieldset>
+
+<% end %>

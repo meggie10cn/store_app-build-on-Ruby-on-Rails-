@@ -1,0 +1,18 @@
+<!-- 
+  lIXIA ZHAO
+  CSC 620 hw5
+  security.html.erb
+  Due 11/23/2015
+-->
+      <h1>Security Page</h1>
+      <div class="form">
+     <%= form_for :security do |form| %>
+     <fieldset>
+    <legend>Answer a Security Question </legend>
+      <fieldset>
+        <label id="question" for="answer"><%= $question %></label>
+        <%= form.text_field :answer, :name => 'answer' %>
+        <%= submit_tag "submit", :class=>"submit" %>
+      </fieldset>
+  <% end %>
+</div>

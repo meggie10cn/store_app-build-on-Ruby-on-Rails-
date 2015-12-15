@@ -1,0 +1,73 @@
+  def security
+    @title = "Security Page"
+    id = session[:user_id]
+
+    if session[:user_id]
+         flash[:notice] = "Welcome #{identify_user(session[:user_id])}"
+         #flash[:notice] = "User #{session[:user_id]} logged in!"
+    end
+    var i= 0
+    while $i < 3 do 
+       if request.post?
+       cookies[:security_question] = nil
+       answer = params[:answer]
+       sanswer = session[:answer]
+       count = 0
+       if answer == sanswer
+           redirect_to :action => 'welcome'
+        else
+           $i+=1
+        end 
+          if $i=3
+            redirect_to :action => 'random'
+         end
+        end
+    end
+end
+
+
+################################
+  def security
+    @title = "Security Page"
+    id = session[:user_id]
+
+    if session[:user_id]
+         flash[:notice] = "Welcome #{identify_user(session[:user_id])}"
+         #flash[:notice] = "User #{session[:user_id]} logged in!"
+    end
+    if request.post?
+       cookies[:security_question] = nil
+       answer = params[:answer]
+       sanswer = session[:answer]
+       count = 0
+       if answer == sanswer
+           redirect_to :action => 'welcome'
+        else
+            redirect_to :action => 'random'
+        end
+    end
+end
+
+
+  def security
+    @title = "Security Page"
+    id = session[:user_id]
+
+    if session[:user_id]
+         flash[:notice] = "Welcome #{identify_user(session[:user_id])}"
+         #flash[:notice] = "User #{session[:user_id]} logged in!"
+    end
+   
+    if request.post?
+       cookies[:security_question] = nil
+       answer = params[:answer]
+       sanswer = session[:answer]
+       
+       if answer == sanswer
+           redirect_to :action => 'welcome'
+        else
+          redirect_to :action => 'random'
+                  
+        end
+    end
+end
